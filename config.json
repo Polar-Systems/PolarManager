@@ -1,0 +1,36 @@
+{
+    "client_id": "client-1",
+    "http_bind": "127.0.0.1",
+    "http_port": 8765,
+    "max_servers": 25,
+    "polarsystems": {
+        "enabled": false,
+        "url": null,
+        "token": null
+    },
+    "polarscript": {
+        "enabled": false,
+        "shared_secret": "local-secret"
+    },
+    "polarbridge": {
+        "enabled": false,
+        "shared_secret": "local-secret"
+    },
+    "servers": [
+        {
+            "id": "mc1",
+            "name": "Minecraft One",
+            "workdir": "./servers/mc1",
+            "start_cmd": [
+                "java",
+                "-jar",
+                "server.jar",
+                "nogui"
+            ],
+            "restart_policy": "on-failure",
+            "max_restart_per_minute": 6,
+            "priority": 80,
+            "health_port": 25565
+        }
+    ]
+}
